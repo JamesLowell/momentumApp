@@ -1,5 +1,5 @@
 // OpenWeatherMap API key
-const apiKey = "3d12cd99ab02976545944c95dfa7eb0f";
+// const apiKey = "****";
 
 // Function to get the user's current location and fetch weather data
 function getCurrentLocationAndFetchWeather() {
