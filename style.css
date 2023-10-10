@@ -1,0 +1,498 @@
+/* Css Reset */
+* {
+  padding: 0;
+  margin: 0; }
+
+/* General body styles */
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden; }
+  body button {
+    cursor: pointer; }
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 0.75rem 0.5rem 0.75rem 3.13rem;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  font-family: "rubik"; }
+
+ul li::before {
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 8px;
+  left: 8px; }
+
+ul li.checked {
+  color: #555;
+  text-decoration: line-through; }
+
+ul li.checked::before {
+  background-image: url(checked.png); }
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 0.3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 22px;
+  color: #555;
+  line-height: 2.5rem;
+  text-align: center;
+  border-radius: 50%; }
+
+ul li span:hover {
+  background: #edeef0; }
+
+/* Scrollbar styles */
+#list-container::-webkit-scrollbar {
+  width: 0.6rem; }
+
+#list-container::-webkit-scrollbar-track {
+  background: whitesmoke; }
+
+#list-container::-webkit-scrollbar-thumb {
+  background-color: #9897fc;
+  border-radius: 0.3rem; }
+
+#list-container::-webkit-scrollbar-thumb:hover {
+  background-color: #5e5df0; }
+
+#weather-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem; }
+
+#weather-container img {
+  position: absolute;
+  right: 3rem;
+  height: 3rem;
+  width: auto; }
+
+#container {
+  display: flex;
+  height: 50vh;
+  width: 100%;
+  flex-direction: column;
+  padding-top: 4rem;
+  align-items: center; }
+
+#current-day {
+  font-family: 'anurati';
+  font-size: clamp(2rem, 5vw, 6rem);
+  text-align: center;
+  padding-left: 1rem;
+  color: white;
+  letter-spacing: 1rem; }
+
+#current-date,
+#current-time {
+  font-family: "rubik";
+  color: white;
+  font-size: clamp(1rem, 1vw, 2rem); }
+
+#greeting {
+  font-family: "rubik";
+  color: white;
+  font-size: clamp(1rem, 4vw, 3rem);
+  margin-top: 3rem; }
+
+#user-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+#icon {
+  padding-left: 3rem;
+  padding-top: 0.7rem;
+  fill: white; }
+
+#icon svg {
+  height: 1.5em; }
+
+#get-name {
+  padding: 1rem; }
+
+#get-name input {
+  font-family: "rubik";
+  width: 10rem;
+  padding: 1.4rem 0.2rem 0.43rem;
+  transition: 0.3s ease;
+  background-color: transparent;
+  border-color: white;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-width: medium;
+  color: white;
+  font-size: 1rem; }
+
+#get-name input:focus {
+  outline: transparent; }
+
+#name-label {
+  font-family: "rubik";
+  position: absolute;
+  left: 5.5rem;
+  top: 2.5rem;
+  transition: 0.3s ease;
+  font-size: 1rem;
+  font-style: italic;
+  color: white;
+  width: 50vw; }
+
+#name {
+  margin: 0.03rem; }
+
+#name:focus ~ label {
+  opacity: 0; }
+
+#name:not(:placeholder-shown) ~ label {
+  opacity: 0; }
+
+#focus-title {
+  font-family: "rubik";
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.7rem);
+  margin-top: 6rem;
+  font-style: italic;
+  letter-spacing: 0.06rem; }
+
+#get-task input {
+  padding: 0.9rem 0.9rem 0.9rem;
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  border-width: medium;
+  width: 20rem;
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  font-style: italic;
+  transition: 0.4s; }
+
+#get-task input:focus {
+  outline: transparent; }
+
+#today-task::placeholder {
+  font-family: "rubik";
+  color: white;
+  font-size: clamp(1rem, 2vw, 2rem);
+  margin-top: 1rem;
+  font-style: italic; }
+
+#quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem; }
+
+#random-quote {
+  color: white;
+  font-family: "rubik";
+  margin-top: 7rem;
+  font-style: italic;
+  width: 70vw;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  /* Start with 0 opacity */
+  transition: opacity 0.5s ease-in-out;
+  /* Apply a smooth fade transition */ }
+
+#popup-modal,
+#todo-list-container {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+#quote-container button {
+  color: white;
+  background-color: transparent;
+  padding: 0.5rem;
+  border-color: transparent; }
+
+#quote-input-container textarea {
+  width: 50vmin;
+  height: 9.4rem;
+  padding: 0.75rem 0.75rem;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none; }
+
+#quote-input-container textarea:focus {
+  outline-color: transparent; }
+
+#add-quote-button {
+  background: #5e5df0;
+  border-radius: 999px;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: "rubik";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 0.5rem 1.13rem;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0; }
+
+#todo-task-button {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  margin-top: 1rem; }
+
+#todo-task-button button {
+  color: white;
+  background-color: transparent;
+  padding: 0.5rem;
+  border-color: transparent;
+  font-size: 1rem; }
+
+/* Todo list styles */
+#todo-list-container {
+  width: auto;
+  height: auto;
+  max-height: 100vh;
+  padding: 0.6rem;
+  box-sizing: border-box;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px; }
+
+#list-container {
+  max-height: 20vh;
+  overflow-y: auto; }
+
+.weather-temperature {
+  color: white;
+  font-family: "rubik";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem; }
+
+.location {
+  position: absolute;
+  top: 2.6rem;
+  right: 0.7rem;
+  color: white;
+  font-family: "rubik";
+  font-size: 0.7rem;
+  width: 4.8rem;
+  text-align: center; }
+
+.borderless {
+  border-color: transparent;
+  border: 0; }
+
+input:invalid {
+  animation: shake 0.3s; }
+
+@keyframes shake {
+  25% {
+    transform: translateX(4px); }
+  50% {
+    transform: translateX(-4px); }
+  75% {
+    transform: translateX(4px); } }
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+  margin: 10% auto;
+  padding: 1.25rem;
+  width: 50vmin;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.todo-app {
+  margin: 1rem;
+  width: 40vw;
+  height: 30vh;
+  background: #fff;
+  padding: 2.5rem 1.88rem 4.40rem;
+  border-radius: 10px; }
+
+.todo-app h2 {
+  font-family: "rubik";
+  color: #002765;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; }
+
+.todo-app h2 img {
+  width: 4rem;
+  margin-left: 10px; }
+
+.add-task-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 1.25rem;
+  margin-bottom: 1.6rem;
+  padding: 0.5rem; }
+
+.add-task-button input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px;
+  width: fit-content; }
+
+.add-task-button button {
+  border: none;
+  outline: none;
+  padding: 1rem;
+  background: #ff5945;
+  color: #fff;
+  font-size: clamp(1rem, 10vw, 2rem);
+  border-radius: 50%;
+  background: #5e5df0;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  font-family: "rubik";
+  font-weight: medium;
+  line-height: 24px;
+  opacity: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word; }
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  color: white; }
+
+.completed {
+  text-decoration: line-through; }
+
+@media only screen and (max-width: 846px) {
+  #get-task input {
+    width: 12rem; }
+
+  .todo-app {
+    width: 70vw;
+    height: 30vh; } }
+@media only screen and (max-width: 496px) {
+  #get-name {
+    padding: 0.5rem; }
+
+  #name-label {
+    left: 2.8rem;
+    top: 2rem; }
+
+  #icon {
+    padding-left: 1rem; }
+
+  .todo-app {
+    width: 80vw;
+    height: 30vh; }
+
+  .add-task-button button {
+    padding: 0.6rem 1.3rem; } }
+@media only screen and (max-width: 496px) {
+  #icon svg {
+    height: 1em; }
+
+  #name-label {
+    font-size: 0.7rem; }
+
+  #get-name input {
+    font-size: 0.7rem;
+    width: 7rem;
+    border-width: thin; }
+
+  #weather-container {
+    top: 1rem;
+    right: 0.5rem; }
+
+  #weather-container img {
+    right: 2.5rem;
+    height: 2.8rem; }
+
+  .add-task-button button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem; }
+
+  .add-task-button input {
+    padding: 0.03rem; }
+
+  .todo-app {
+    width: 70vw;
+    height: 30vh; }
+
+  .weather-temperature {
+    top: 0.8rem;
+    right: 1rem;
+    font-size: 0.8rem; }
+
+  .location {
+    top: 2.3rem;
+    right: 0.3rem;
+    font-size: 0.5rem;
+    width: 4.8rem; } }
+@media only screen and (max-height: 800px) {
+  #random-quote {
+    margin-top: 3rem; } }
+
+/*# sourceMappingURL=style.css.map */
